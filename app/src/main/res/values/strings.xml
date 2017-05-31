@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">Popular Movies, Stage 2</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+    <string name="title_most_popular">Most Popular</string>
+    <string name="title_highest_rate">Highest Rated</string>
+    <string name="title_favorite">Favorite</string>
+    <string name="no_favorites_message">You Have No Favorites Yet</string>
+
+    <string name="error_message">ERROR! ERROR! ERROR! \nYou should probably connect to the internet</string>
+    <string name="action_refresh">Refresh</string>
+    <string name="image_summary">Movie Poster Image</string>
+
+    <string name="favorite">Add to Favorite</string>
+    <string name="remove_favorite">Remove From Favorite</string>
+    <string name="movie_details">Movie Details</string>
+    <string name="movie_title">Movie Title</string>
+    <string name="ten_outof_ten">10.0 / 10</string>
+    <string name="random_date">Mon May 08, 2017</string>
+    <string name="details_review">Rating:</string>
+    <string name="details_released">Released:</string>
+    <string name="overview_tester">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</string>
+    <string name="movie_poster">Movie Poster</string>
+    <string name="author_name">Authors Name</string>
+    <string name="review_text">Well, one off from two of this years most expected movies alongside The Battle of Five Armies. Like all the Chris Nolan fans, I was equally excited to see the movie on the opening day opening</string>
+    <string name="trailer">Trailers</string>
+    <string name="reviews">Reviews</string>
+    <string name="title_of_trailer">Title of Trailer</string>
+    <string name="no_trailers_yet">There have been no trailers for this movie</string>
+    <string name="no_reviews_yet">There have been no reviews for this movie yet</string>
+    <string name="title_activity_main_poster">MainPosterActivity</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+</resources>
