@@ -13,6 +13,7 @@
     <string name="action_refresh">Refresh</string>
     <string name="image_summary">Movie Poster Image</string>
 
+
     <string name="favorite">Add to Favorite</string>
     <string name="remove_favorite">Remove From Favorite</string>
     <string name="movie_details">Movie Details</string>
@@ -23,6 +24,7 @@
     <string name="details_released">Released:</string>
     <string name="overview_tester">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</string>
     <string name="movie_poster">Movie Poster</string>
+    <string name="movie_backdrop">Movie Backdrop</string>
     <string name="author_name">Authors Name</string>
     <string name="review_text">Well, one off from two of this years most expected movies alongside The Battle of Five Armies. Like all the Chris Nolan fans, I was equally excited to see the movie on the opening day opening</string>
     <string name="trailer">Trailers</string>
@@ -32,8 +34,6 @@
     <string name="no_reviews_yet">There have been no reviews for this movie yet</string>
     <string name="title_activity_main_poster">MainPosterActivity</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-
+    <string name="wrote"> wrote:</string>
 
 </resources>

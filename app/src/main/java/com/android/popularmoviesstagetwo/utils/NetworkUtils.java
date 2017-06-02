@@ -14,19 +14,19 @@ public class NetworkUtils {
 
     private static final String TAG = NetworkUtils.class.getSimpleName();
 
-    final static String SCHEME = "http";
-    final static String AUTHORITY = "api.themoviedb.org";
-    final static String APPEND_PATH_1 = "3";
-    final static String APPEND_PATH_2 = "movie";
+    private final static String SCHEME = "http";
+    private final static String AUTHORITY = "api.themoviedb.org";
+    private final static String APPEND_PATH_1 = "3";
+    private final static String APPEND_PATH_2 = "movie";
 
-    final static String API_PARAM = "api_key";
-    final static String API_KEY = "1e1522ebb1ae52a97fec91a11d731871";
-    final static String SORT_ORDER_POPULAR = "popular";
-    final static String SORT_ORDER_RATED = "top_rated";
+    private final static String API_PARAM = "api_key";
+    private final static String API_KEY = "";
+    private final static String SORT_ORDER_POPULAR = "popular";
+    private final static String SORT_ORDER_RATED = "top_rated";
 
-    final static String TRAILER_AND_REVIEW_BASE_URL = "https://api.themoviedb.org/3/movie/";
-    final static String TRAILER_URL_2 = "/videos?api_key=1e1522ebb1ae52a97fec91a11d731871&language=en-US";
-    final static String REVIEW_URL_2 =  "/reviews?api_key=1e1522ebb1ae52a97fec91a11d731871&language=en-US&page=1";
+    private final static String TRAILER_AND_REVIEW_BASE_URL = "https://api.themoviedb.org/3/movie/";
+    private final static String TRAILER_URL_2 = "/videos?api_key=1e1522ebb1ae52a97fec91a11d731871&language=en-US";
+    private final static String REVIEW_URL_2 =  "/reviews?api_key=1e1522ebb1ae52a97fec91a11d731871&language=en-US&page=1";
 
 
     public static URL buildMostPopUrl() {

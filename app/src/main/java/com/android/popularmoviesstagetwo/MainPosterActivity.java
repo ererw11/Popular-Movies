@@ -1,6 +1,7 @@
 package com.android.popularmoviesstagetwo;
 
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
@@ -19,8 +20,6 @@ public class MainPosterActivity extends AppCompatActivity {
     public static final int INDEX_MOVIE_ID = 0;
     public static final int INDEX_MOVIE_TITLE = 1;
     public static final int INDEX_MOVIE_POSTER = 2;
-
-    //TODO savedInstanceState
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -57,9 +56,5 @@ public class MainPosterActivity extends AppCompatActivity {
         transaction.commit();
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-
-
-//        MovieSyncUtils.startMovieSync(getBaseContext());
     }
-
 }

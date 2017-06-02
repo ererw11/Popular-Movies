@@ -17,10 +17,6 @@ import com.android.popularmoviesstagetwo.database.DatabaseContract.MostPopMovieE
 
 import static com.android.popularmoviesstagetwo.database.DatabaseContract.FavoriteEntry.TABLE_NAME_FAVORITE;
 
-/**
- * Created by Eric Emery on 5/18/2017.
- */
-
 public class DatabaseProvider extends ContentProvider {
 
     public static final int CODE_MOST_POPULAR = 1100;
@@ -236,32 +232,11 @@ public class DatabaseProvider extends ContentProvider {
                         selection,
                         selectionArgs);
                 break;
-            case CODE_MOST_POPULAR_WITH_ID:
-                id = uri.getPathSegments().get(1);
-                moviesDeleted = db.delete(
-                        MostPopMovieEntry.TABLE_NAME_MOST_POP,
-                        "_id=?",
-                        new String[]{id});
-                break;
             case CODE_HIGH_RATED:
                 moviesDeleted = db.delete(
                         HighRatedMovieEntry.TABLE_NAME_HIGH_RATED,
                         selection,
                         selectionArgs);
-                break;
-            case CODE_HIGH_RATED_WITH_ID:
-                id = uri.getPathSegments().get(1);
-                moviesDeleted = db.delete(
-                        HighRatedMovieEntry.TABLE_NAME_HIGH_RATED,
-                        "_id=?",
-                        new String[]{id});
-                break;
-            case CODE_FAVORITES_WITH_ID:
-                id = uri.getPathSegments().get(1);
-                moviesDeleted = db.delete(
-                        FavoriteEntry.TABLE_NAME_FAVORITE,
-                        "_id=?",
-                        new String[]{id});
                 break;
             default:
                 throw new UnsupportedOperationException("Unknown uri: " + uri);

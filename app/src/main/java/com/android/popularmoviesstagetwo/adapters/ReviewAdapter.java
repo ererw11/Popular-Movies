@@ -9,15 +9,9 @@ import android.widget.TextView;
 
 import com.android.popularmoviesstagetwo.R;
 
-/**
- * Created by Eric Emery on 5/23/2017.
- */
-
 public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.ReviewAdapterViewHolder> {
 
     private String[] mReviewData;
-
-    private String WROTE = " wrote:";
 
     public ReviewAdapter() {
     }
@@ -50,7 +44,7 @@ public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.ReviewAdap
         String reviewDataString = mReviewData[position];
         // Separate the author and text
         String[] separateAuthorAndText = reviewDataString.split(":");
-        reviewAdapterViewHolder.mReviewAuthor.setText(separateAuthorAndText[0].trim() + WROTE);
+        reviewAdapterViewHolder.mReviewAuthor.setText(separateAuthorAndText[0].trim() + R.string.wrote);
         reviewAdapterViewHolder.mReviewText.setText(separateAuthorAndText[1].trim());
     }
 

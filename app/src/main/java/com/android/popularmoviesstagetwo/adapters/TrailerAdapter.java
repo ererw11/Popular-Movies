@@ -10,10 +10,6 @@ import android.widget.TextView;
 
 import com.android.popularmoviesstagetwo.R;
 
-/**
- * Created by Eric Emery on 5/23/2017.
- */
-
 public class TrailerAdapter extends RecyclerView.Adapter<TrailerAdapter.TrailerAdapterViewHolder> {
 
     private String[] mTrailerData;
