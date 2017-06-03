@@ -110,7 +110,7 @@ public class DatabaseProvider extends ContentProvider {
 
             case CODE_MOST_POPULAR_WITH_ID: {
                 String movieIDString = uri.getLastPathSegment();
-                String [] selectionArguments = new String[]{movieIDString};
+                String[] selectionArguments = new String[]{movieIDString};
                 cursor = mOpenHelper.getReadableDatabase().query(
                         MostPopMovieEntry.TABLE_NAME_MOST_POP,
                         projection,
@@ -134,7 +134,7 @@ public class DatabaseProvider extends ContentProvider {
             }
             case CODE_HIGH_RATED_WITH_ID: {
                 String movieIDString = uri.getLastPathSegment();
-                String [] selectionArguments = new String[]{movieIDString};
+                String[] selectionArguments = new String[]{movieIDString};
                 cursor = mOpenHelper.getReadableDatabase().query(
                         HighRatedMovieEntry.TABLE_NAME_HIGH_RATED,
                         projection,
@@ -158,7 +158,7 @@ public class DatabaseProvider extends ContentProvider {
             }
             case CODE_FAVORITES_WITH_ID: {
                 String movieIDString = uri.getLastPathSegment();
-                String [] selectionArguments = new String[]{movieIDString};
+                String[] selectionArguments = new String[]{movieIDString};
                 cursor = mOpenHelper.getReadableDatabase().query(
                         TABLE_NAME_FAVORITE,
                         projection,

@@ -4,10 +4,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/**
- * Created by Eric Emery on 5/23/2017.
- */
-
 public final class OpenReviewJsonData {
 
     public static String[] getSimpleReviewStringsFromJson(String reviewJsonString) throws JSONException {
@@ -25,7 +21,7 @@ public final class OpenReviewJsonData {
 
         parsedReviewData = new String[reviewArray.length()];
 
-        for (int i = 0;i < reviewArray.length(); i++) {
+        for (int i = 0; i < reviewArray.length(); i++) {
             String author;
             String text;
 

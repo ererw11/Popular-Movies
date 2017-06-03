@@ -3,7 +3,7 @@
               xmlns:app="http://schemas.android.com/apk/res-auto"
               xmlns:tools="http://schemas.android.com/tools"
               android:layout_width="match_parent"
-              android:layout_height="60dp"
+              android:layout_height="@dimen/trailer_list_height"
               android:orientation="vertical">
 
     <LinearLayout
@@ -21,7 +21,7 @@
         <TextView
             android:id="@+id/tv_trailer_title"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
+            android:layout_height="@dimen/margin_xxxx_large"
             android:layout_weight="1"
             android:gravity="center_vertical"
             android:lines="2"
@@ -32,8 +32,9 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginRight="4dp"
+        android:layout_height="@dimen/margin_extra_small"
+        android:layout_marginLeft="@dimen/margin_small"
+        android:layout_marginRight="@dimen/margin_small"
         android:background="@color/colorAccent"/>
+
 </LinearLayout>

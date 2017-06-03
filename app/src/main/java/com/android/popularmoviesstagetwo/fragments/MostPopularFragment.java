@@ -59,7 +59,7 @@ public class MostPopularFragment extends Fragment implements
         return fragment;
     }
 
-   public MostPopularFragment() {
+    public MostPopularFragment() {
         // Required empty public constructor
     }
 
@@ -134,7 +134,7 @@ public class MostPopularFragment extends Fragment implements
     @Override
     public void onClick(int movieId) {
         Intent movieDetailIntent = new Intent(getActivity(), MovieDetailsActivity.class);
-        Uri uriForMovieClicked = DatabaseContract.MostPopMovieEntry.buildMovieUriWithID(movieId) ;
+        Uri uriForMovieClicked = DatabaseContract.MostPopMovieEntry.buildMovieUriWithID(movieId);
         movieDetailIntent.setData(uriForMovieClicked);
         movieDetailIntent.putExtra(FROM, MOST_POPULAR);
         Log.e(TAG, "URI: " + uriForMovieClicked);

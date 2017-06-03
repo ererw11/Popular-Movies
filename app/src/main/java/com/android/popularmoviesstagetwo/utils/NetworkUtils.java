@@ -26,7 +26,7 @@ public class NetworkUtils {
 
     private final static String TRAILER_AND_REVIEW_BASE_URL = "https://api.themoviedb.org/3/movie/";
     private final static String TRAILER_URL_2 = "/videos?api_key=1e1522ebb1ae52a97fec91a11d731871&language=en-US";
-    private final static String REVIEW_URL_2 =  "/reviews?api_key=1e1522ebb1ae52a97fec91a11d731871&language=en-US&page=1";
+    private final static String REVIEW_URL_2 = "/reviews?api_key=1e1522ebb1ae52a97fec91a11d731871&language=en-US&page=1";
 
 
     public static URL buildMostPopUrl() {

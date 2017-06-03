@@ -34,7 +34,7 @@ public class MovieSyncTask {
             URL highRatedMovieRequestUrl = NetworkUtils.buildHighRatedURL();
             String jsonHighRatedResponse = NetworkUtils.getResponseFromHttpUrl(highRatedMovieRequestUrl);
             ContentValues[] highRatedValues = OpenMovieJsonUtils.getSimpleMovieStringsFromJson(context, jsonHighRatedResponse);
-            if (highRatedValues !=null && highRatedValues.length != 0) {
+            if (highRatedValues != null && highRatedValues.length != 0) {
                 ContentResolver highRatedContentResolver = context.getContentResolver();
                 highRatedContentResolver.delete(
                         HighRatedMovieEntry.HIGH_RATED_CONTENT_URI,

@@ -4,10 +4,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/**
- * Created by Eric Emery on 5/23/2017.
- */
-
 public final class OpenTrailerJsonUtils {
 
     public static String[] getSimpleTrailerStringsFromJson(String trailerJsonString) throws JSONException {

@@ -16,8 +16,8 @@
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:layout_marginTop="4dp"
+            android:layout_height="@dimen/margin_extra_small"
+            android:layout_marginTop="@dimen/margin_small"
             android:background="@color/colorPrimaryDark"/>
 
         <LinearLayout
@@ -25,42 +25,41 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <!--Movie Title-->
             <TextView
                 android:id="@+id/tv_movie_title_details"
-                android:layout_width="0dp"
+                android:layout_width="@dimen/margin_none"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
+                android:layout_marginStart="@dimen/margin_small"
                 android:layout_weight="9"
                 android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-                android:textSize="34sp"
+                android:textSize="@dimen/text_movie_title"
                 tools:text="@string/movie_title"/>
         </LinearLayout>
 
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="@dimen/margin_none"
             android:layout_weight=".5">
 
             <LinearLayout
-                android:layout_width="0dp"
+                android:layout_width="@dimen/margin_none"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="0dp"
+                    android:layout_width="@dimen/margin_none"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="end"
-                    android:paddingEnd="4dp"
+                    android:paddingEnd="@dimen/margin_small"
                     android:text="@string/details_review"
                     android:textColor="@android:color/black"/>
 
                 <TextView
                     android:id="@+id/tv_movie_rating"
-                    android:layout_width="0dp"
+                    android:layout_width="@dimen/margin_none"
                     android:layout_height="wrap_content"
                     android:layout_weight="1.35"
                     android:textColor="@android:color/black"
@@ -69,22 +68,22 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="0dp"
+                android:layout_width="@dimen/margin_none"
                 android:layout_height="match_parent"
                 android:layout_weight="2">
 
                 <TextView
-                    android:layout_width="0dp"
+                    android:layout_width="@dimen/margin_none"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="end"
-                    android:paddingEnd="4dp"
+                    android:paddingEnd="@dimen/margin_small"
                     android:text="@string/details_released"
                     android:textColor="@android:color/black"/>
 
                 <TextView
                     android:id="@+id/tv_movie_date"
-                    android:layout_width="0dp"
+                    android:layout_width="@dimen/margin_none"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:textColor="@android:color/black"
@@ -105,8 +104,8 @@
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:layout_marginTop="4dp"
+                android:layout_height="@dimen/margin_extra_small"
+                android:layout_marginTop="@dimen/margin_small"
                 android:background="@color/colorPrimaryDark"/>
 
             <LinearLayout
@@ -115,41 +114,41 @@
                 android:orientation="horizontal">
 
                 <ScrollView
-                    android:layout_width="0dp"
-                    android:layout_height="275dp"
+                    android:layout_width="@dimen/margin_none"
+                    android:layout_height="@dimen/image_overview_height"
                     android:layout_weight="1">
 
                     <TextView
                         android:id="@+id/tv_overview"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="4dp"
+                        android:layout_marginStart="@dimen/margin_small"
+                        android:layout_marginTop="@dimen/margin_small"
                         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                        android:textSize="16sp"
+                        android:textSize="@dimen/text_movie_overview"
                         tools:text="@string/overview_tester"/>
 
                 </ScrollView>
 
-
                 <ImageView
                     android:id="@+id/iv_movie_poster_details"
-                    android:layout_width="0dp"
+                    android:layout_width="@dimen/margin_none"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:cropToPadding="false"
                     android:contentDescription="@string/movie_poster"
-                    android:paddingStart="4dp"
-                    android:paddingEnd="4dp"
-                    android:paddingTop="4dp"
+                    android:paddingStart="@dimen/margin_small"
+                    android:paddingEnd="@dimen/margin_small"
+                    android:paddingTop="@dimen/margin_small"
                     tools:src="@drawable/poster_example"/>
 
             </LinearLayout>
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:layout_marginBottom="2dp"
-                android:layout_marginTop="4dp"
+                android:layout_height="@dimen/margin_extra_small"
+                android:layout_marginBottom="@dimen/margin_extra_small"
+                android:layout_marginTop="@dimen/margin_small"
                 android:background="@color/colorPrimaryDark"/>
 
             <FrameLayout
@@ -167,15 +166,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:padding="16dp"
+                    android:padding="@dimen/margin_extra_large"
                     android:text="@string/no_trailers_yet"
                     android:textSize="20sp"
                     android:visibility="invisible"/>
 
                 <ProgressBar
                     android:id="@+id/pb_trailers"
-                    android:layout_width="42dp"
-                    android:layout_height="42dp"
+                    android:layout_width="@dimen/margin_xxx_large"
+                    android:layout_height="@dimen/margin_xxx_large"
                     android:layout_gravity="center"
                     android:visibility="invisible"/>
 
@@ -183,9 +182,9 @@
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:layout_marginBottom="2dp"
-                android:layout_marginTop="4dp"
+                android:layout_height="@dimen/margin_extra_small"
+                android:layout_marginBottom="@dimen/margin_extra_small"
+                android:layout_marginTop="@dimen/margin_small"
                 android:background="@color/colorPrimaryDark"/>
 
             <FrameLayout
@@ -203,15 +202,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
-                    android:padding="16dp"
+                    android:padding="@dimen/margin_extra_large"
                     android:text="@string/no_reviews_yet"
                     android:textSize="20sp"
                     android:visibility="invisible"/>
 
                 <ProgressBar
                     android:id="@+id/pb_reviews"
-                    android:layout_width="42dp"
-                    android:layout_height="42dp"
+                    android:layout_width="@dimen/margin_xxx_large"
+                    android:layout_height="@dimen/margin_xxx_large"
                     android:layout_gravity="center"
                     android:visibility="invisible"/>
 
@@ -219,9 +218,9 @@
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:layout_marginBottom="2dp"
-                android:layout_marginTop="4dp"
+                android:layout_height="@dimen/margin_extra_small"
+                android:layout_marginBottom="@dimen/margin_extra_small"
+                android:layout_marginTop="@dimen/margin_small"
                 android:background="@color/colorPrimaryDark"/>
 
         </LinearLayout>

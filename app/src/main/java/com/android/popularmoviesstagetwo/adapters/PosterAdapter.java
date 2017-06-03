@@ -17,10 +17,6 @@ import com.android.popularmoviesstagetwo.MovieDetailsActivity;
 import com.android.popularmoviesstagetwo.R;
 import com.squareup.picasso.Picasso;
 
-/**
- * Created by Eric Emery on 5/18/2017.
- */
-
 public class PosterAdapter extends RecyclerView.Adapter<PosterAdapter.PosterAdapterViewHolder> {
 
     private final Context mContext;

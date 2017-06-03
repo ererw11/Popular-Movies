@@ -9,10 +9,6 @@ import org.json.JSONObject;
 
 import static com.android.popularmoviesstagetwo.database.DatabaseContract.MostPopMovieEntry.*;
 
-/**
- * Created by Eric Emery on 5/18/2017.
- */
-
 public class OpenMovieJsonUtils {
 
     public static ContentValues[] getSimpleMovieStringsFromJson(Context context, String movieJsonStr)
@@ -49,7 +45,7 @@ public class OpenMovieJsonUtils {
             movieVoteAverage = currentMovie.getString(VOTE_AVERAGE);
             movieOverview = currentMovie.getString(OVERVIEW);
             movieReleaseDate = currentMovie.getString(RELEASE_DATE);
-            movieBackdrop =  currentMovie.getString(BACKDROP_PATH);
+            movieBackdrop = currentMovie.getString(BACKDROP_PATH);
 
             ContentValues movieValues = new ContentValues();
             movieValues.put(COLUMN_MOVIE_ID, movieID);

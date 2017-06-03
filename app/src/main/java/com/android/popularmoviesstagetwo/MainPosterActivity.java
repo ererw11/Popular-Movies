@@ -1,19 +1,16 @@
 package com.android.popularmoviesstagetwo;
 
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
-import android.widget.TextView;
 
 import com.android.popularmoviesstagetwo.fragments.FavoritesFragment;
 import com.android.popularmoviesstagetwo.fragments.HighestRatedFragment;
 import com.android.popularmoviesstagetwo.fragments.MostPopularFragment;
-import com.android.popularmoviesstagetwo.sync.MovieSyncUtils;
 
 public class MainPosterActivity extends AppCompatActivity {
 
@@ -51,10 +48,23 @@ public class MainPosterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_poster);
 
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.frame_layout, MostPopularFragment.newInstance());
-        transaction.commit();
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction()
+                    .add(R.id.frame_layout, MostPopularFragment.newInstance())
+                    .commit();
+        }
+
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
     }
 }
