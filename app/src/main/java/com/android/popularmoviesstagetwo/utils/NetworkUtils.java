@@ -20,7 +20,7 @@ public class NetworkUtils {
     private final static String APPEND_PATH_2 = "movie";
 
     private final static String API_PARAM = "api_key";
-    private final static String API_KEY = "";
+    private final static String API_KEY = "1e1522ebb1ae52a97fec91a11d731871";
     private final static String SORT_ORDER_POPULAR = "popular";
     private final static String SORT_ORDER_RATED = "top_rated";
 

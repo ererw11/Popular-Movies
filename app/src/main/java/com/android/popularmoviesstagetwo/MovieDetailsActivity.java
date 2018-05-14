@@ -1,17 +1,15 @@
 package com.android.popularmoviesstagetwo;
 
-import android.content.ContentResolver;
 import android.content.ContentValues;
-import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Bundle;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.CursorLoader;
 import android.support.v4.content.Loader;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -38,11 +36,6 @@ import static com.android.popularmoviesstagetwo.database.DatabaseContract.MostPo
 
 public class MovieDetailsActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor>, TrailerAdapterOnClickHandler {
 
-    private final String FROM = "from";
-    private final String MOST_POPULAR = "most_popular";
-    private final String HIGHEST_RATED = "highest_rated";
-    private final String FAVORITE = "favorite";
-
     public static final String[] MOST_POPULAR_PROJECTION = {
             MostPopMovieEntry._ID,
             MostPopMovieEntry.COLUMN_MOVIE_ID,
@@ -53,7 +46,6 @@ public class MovieDetailsActivity extends AppCompatActivity implements LoaderMan
             MostPopMovieEntry.COLUMN_MOVIE_OVERVIEW,
             MostPopMovieEntry.COLUMN_MOVIE_BACKDROP
     };
-
     public static final String[] HIGH_RATED_PROJECTION = {
             HighRatedMovieEntry._ID,
             HighRatedMovieEntry.COLUMN_MOVIE_ID,
@@ -64,7 +56,6 @@ public class MovieDetailsActivity extends AppCompatActivity implements LoaderMan
             HighRatedMovieEntry.COLUMN_MOVIE_OVERVIEW,
             HighRatedMovieEntry.COLUMN_MOVIE_BACKDROP
     };
-
     public static final String[] FAVORITE_PROJECTION = {
             FavoriteEntry._ID,
             FavoriteEntry.COLUMN_MOVIE_ID,
@@ -76,7 +67,6 @@ public class MovieDetailsActivity extends AppCompatActivity implements LoaderMan
             FavoriteEntry.COLUMN_MOVIE_BACKDROP,
             FavoriteEntry.COLUMN_MOVIE_FAVORITE
     };
-
     public static final int INDEX_ID = 0;
     public static final int INDEX_MOVIE_ID = 1;
     public static final int INDEX_MOVIE_TITLE = 2;
@@ -85,11 +75,17 @@ public class MovieDetailsActivity extends AppCompatActivity implements LoaderMan
     public static final int INDEX_MOVIE_RELEASE = 5;
     public static final int INDEX_MOVIE_OVERVIEW = 6;
     public static final int INDEX_MOVIE_BACKDROP = 7;
-
+    final static String OLD_DATE_FORMAT = "yyyy-MM-dd";
+    final static String NEW_DATE_FORMAT = "EEE MMM d, yyyy";
+    final static String BASE_URL_YOUTUBE = "http://www.youtube.com/watch?v=";
     private static final int ID_DETAIL_LOADER = 111;
-
+    final String BASE_URL_BACKDROP = "http://image.tmdb.org/t/p/w780/";
+    final String BASE_URL_POSTER = "http://image.tmdb.org/t/p/w500/";
+    private final String FROM = "from";
+    private final String MOST_POPULAR = "most_popular";
+    private final String HIGHEST_RATED = "highest_rated";
+    private final String FAVORITE = "favorite";
     private Uri mUri;
-
     private TextView movieDetailsTitle;
     private TextView movieDetailsRating;
     private TextView movieDetailDate;
@@ -97,7 +93,6 @@ public class MovieDetailsActivity extends AppCompatActivity implements LoaderMan
     private ImageView movieDetailsPoster;
     private ImageView movieDetailsBackdrop;
     private ImageView movieDetailsFavorite;
-
     private int mId;
     private int mMovieId;
     private String mMovieTitle;
@@ -107,16 +102,7 @@ public class MovieDetailsActivity extends AppCompatActivity implements LoaderMan
     private String mMovieOverview;
     private String mMovieBackdrop;
     private String mUpdatedRating;
-
     private String mIsFavorite = "yes_favorite";
-
-    final static String OLD_DATE_FORMAT = "yyyy-MM-dd";
-    final static String NEW_DATE_FORMAT = "EEE MMM d, yyyy";
-
-    final String BASE_URL_BACKDROP = "http://image.tmdb.org/t/p/w780/";
-    final String BASE_URL_POSTER = "http://image.tmdb.org/t/p/w500/";
-    final static String BASE_URL_YOUTUBE = "http://www.youtube.com/watch?v=";
-
     private RecyclerView mTrailerRecyclerView;
     private TrailerAdapter mTrailerAdapter;
     private TextView mTrailersNone;
@@ -126,6 +112,18 @@ public class MovieDetailsActivity extends AppCompatActivity implements LoaderMan
     private ReviewAdapter mReviewAdapter;
     private TextView mReviewsNone;
     private ProgressBar mReviewProgressBar;
+
+    private static String convertDate(String dateFromMovieObject) {
+        SimpleDateFormat originalFormat = new SimpleDateFormat(OLD_DATE_FORMAT, Locale.US);
+        SimpleDateFormat newFormat = new SimpleDateFormat(NEW_DATE_FORMAT);
+        String dateString = "";
+        try {
+            dateString = newFormat.format(originalFormat.parse(dateFromMovieObject));
+        } catch (java.text.ParseException e) {
+            e.printStackTrace();
+        }
+        return dateString;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -287,18 +285,6 @@ public class MovieDetailsActivity extends AppCompatActivity implements LoaderMan
 
     @Override
     public void onLoaderReset(Loader<Cursor> loader) {
-    }
-
-    private static String convertDate(String dateFromMovieObject) {
-        SimpleDateFormat originalFormat = new SimpleDateFormat(OLD_DATE_FORMAT, Locale.US);
-        SimpleDateFormat newFormat = new SimpleDateFormat(NEW_DATE_FORMAT);
-        String dateString = "";
-        try {
-            dateString = newFormat.format(originalFormat.parse(dateFromMovieObject));
-        } catch (java.text.ParseException e) {
-            e.printStackTrace();
-        }
-        return dateString;
     }
 
     private void showTrailerDataView() {

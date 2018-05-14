@@ -16,6 +16,8 @@ public class MovieSyncTask {
 
     synchronized public static void syncMovies(Context context) {
         try {
+
+
             URL mostPopMovieRequestUrl = NetworkUtils.buildMostPopUrl();
             String jsonMostPopularResponse = NetworkUtils.getResponseFromHttpUrl(mostPopMovieRequestUrl);
             ContentValues[] mostPopularValues = OpenMovieJsonUtils.getSimpleMovieStringsFromJson(context, jsonMostPopularResponse);
@@ -30,6 +32,8 @@ public class MovieSyncTask {
                         MostPopMovieEntry.MOST_POP_CONTENT_URI,
                         mostPopularValues);
             }
+
+
 
             URL highRatedMovieRequestUrl = NetworkUtils.buildHighRatedURL();
             String jsonHighRatedResponse = NetworkUtils.getResponseFromHttpUrl(highRatedMovieRequestUrl);

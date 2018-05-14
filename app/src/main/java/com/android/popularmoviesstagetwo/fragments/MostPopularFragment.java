@@ -91,7 +91,6 @@ public class MostPopularFragment extends Fragment implements
 
         getLoaderManager().initLoader(MOVIE_LOADER_ID, null, this);
 
-
         MovieSyncUtils.startMovieSync(mContext);
 
         return mostPopRootView;

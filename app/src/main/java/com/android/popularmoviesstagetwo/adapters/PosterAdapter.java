@@ -1,7 +1,6 @@
 package com.android.popularmoviesstagetwo.adapters;
 
 import android.content.Context;
-import android.content.Intent;
 import android.database.Cursor;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -13,7 +12,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.android.popularmoviesstagetwo.MainPosterActivity;
-import com.android.popularmoviesstagetwo.MovieDetailsActivity;
 import com.android.popularmoviesstagetwo.R;
 import com.squareup.picasso.Picasso;
 
@@ -22,11 +20,6 @@ public class PosterAdapter extends RecyclerView.Adapter<PosterAdapter.PosterAdap
     private final Context mContext;
 
     private final MovieAdapterOnClickHandler mClickHandler;
-
-    public interface MovieAdapterOnClickHandler {
-        void onClick(int movieId);
-    }
-
     private Cursor mCursor;
 
     public PosterAdapter(@NonNull Context context, MovieAdapterOnClickHandler clickHandler) {
@@ -36,14 +29,7 @@ public class PosterAdapter extends RecyclerView.Adapter<PosterAdapter.PosterAdap
 
     @Override
     public PosterAdapterViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-
-        View view = LayoutInflater
-                .from(mContext)
-                .inflate(R.layout.movie_list_item, parent, false);
-
-        view.setFocusable(true);
-
-
+        View view = LayoutInflater.from(mContext).inflate(R.layout.movie_list_item, parent, false);
         return new PosterAdapterViewHolder(view);
     }
 
@@ -72,6 +58,10 @@ public class PosterAdapter extends RecyclerView.Adapter<PosterAdapter.PosterAdap
     public void swapCursor(Cursor newCursor) {
         mCursor = newCursor;
         notifyDataSetChanged();
+    }
+
+    public interface MovieAdapterOnClickHandler {
+        void onClick(int movieId);
     }
 
     public class PosterAdapterViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
